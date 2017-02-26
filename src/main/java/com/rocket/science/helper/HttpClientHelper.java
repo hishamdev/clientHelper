@@ -1,19 +1,17 @@
 package com.rocket.science.helper;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.Optional;
-
 import org.apache.http.HttpResponse;
-import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Optional;
 
 
 
@@ -72,7 +70,7 @@ public class HttpClientHelper {
             HttpClient client = new DefaultHttpClient();//HttpClientBuilder.create().build();
             HttpPost request = new HttpPost(url);
             StringEntity params =new StringEntity(jsonobject.toString());
-            request.addHeader("content-type", "application/x-www-form-urlencoded");
+            request.addHeader("content-type", "application/json");
             request.setEntity(params);
             HttpResponse response = client.execute(request);
 

@@ -1,8 +1,9 @@
 package com.rocket.science.helper;
 
-public class Constants {
+public final class Constants {
 
-    public enum DriverStatus {
+
+    public  enum DriverStatus {
         IDLE("IDLE"),
         IN_TRIP("IN_TRIP"),
         LOGGED_OUT("LOGGED_OUT");
@@ -45,6 +46,26 @@ public class Constants {
 
         public String toString(){
             return this.bookingStatus.toString();
+        }
+
+    }
+
+    public enum CabCategories {
+        SEDAN("SEDAN"),
+        LUX("LUX");
+
+        private String category;
+
+        CabCategories(String category){
+            this.category = category;
+        }
+
+        public String getText() {
+            return this.category;
+        }
+
+        public String toString(){
+            return this.category.toString();
         }
 
     }
